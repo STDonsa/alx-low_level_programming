@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
  * main - Entry point
- * description: A c  program that prints the size of various types on the computer it is compiled and run on
- * Return 0 (success)
+ * Description: 'C  program that prints the size of various types on the computer it is compiled and run on'
+ * Return: Always  0 (success)
  */
 int main(void)
 {
