@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _strcat - concatenates two strings
  * @dest: input parameter string
@@ -6,6 +7,7 @@
  *
  * Return: dest
  */
+
 char *_strcat(char *dest, char *src)
 {
 	int a;
@@ -26,5 +28,6 @@ char *_strcat(char *dest, char *src)
 		a++;
 		b++;
 	}
+	dest[a] = 0;
 	return (dest);
 }
