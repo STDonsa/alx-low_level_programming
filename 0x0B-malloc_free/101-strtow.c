@@ -2,25 +2,25 @@
 #include "main.h"
 
 /**
- * count_word - helper function to count the number of words in a string
- * @s: string to evaluate
+ * count_word - the helper function to count the number of words in a string
+ * @s: the string to evaluate
  *
  * Return: number of words
  */
 int count_word(char *s)
 {
-	int donsa, s, t;
+	int flag, c, t;
 
-	donsa = 0;
+	flag = 0;
 	t = 0;
 
-	for (s = 0; s[s] != '\0'; s++)
+	for (c = 0; s[c] != '\0'; c++)
 	{
-		if (s[s] == ' ')
-			donsa = 0;
-		else if (donsa == 0)
+		if (s[c] == ' ')
+			flag = 0;
+		else if (flag == 0)
 		{
-			donsa = 1;
+			flag = 1;
 			t++;
 		}
 	}
@@ -28,8 +28,8 @@ int count_word(char *s)
 	return (t);
 }
 /**
- * **strtow - splits a string into words
- * @str: string to split
+ * **strtow - funtion splits a string into words
+ * @str: the string to split
  *
  * Return: pointer to an array of strings (Success)
  * or NULL (Error)
@@ -37,7 +37,7 @@ int count_word(char *s)
 char **strtow(char *str)
 {
 	char **matrix, *tmp;
-	int s, k = 0, len = 0, words, c = 0, start, end;
+	int d, k = 0, len = 0, words, c = 0, start, end;
 
 	while (*(str + len))
 		len++;
@@ -49,13 +49,13 @@ char **strtow(char *str)
 	if (matrix == NULL)
 		return (NULL);
 
-	for (s = 0; s <= len; s++)
+	for (d = 0; d <= len; d++)
 	{
-		if (str[s] == ' ' || str[s] == '\0')
+		if (str[d] == ' ' || str[d] == '\0')
 		{
 			if (c)
 			{
-				end = s;
+				end = d;
 				tmp = (char *) malloc(sizeof(char) * (c + 1));
 				if (tmp == NULL)
 					return (NULL);
@@ -68,7 +68,7 @@ char **strtow(char *str)
 			}
 		}
 		else if (c++ == 0)
-			start = s;
+			start = d;
 	}
 
 	matrix[k] = NULL;
